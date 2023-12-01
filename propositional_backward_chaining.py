@@ -64,6 +64,17 @@ def backward_chaining(goal, knowledge_base, visited=None):
                 node.achievable = True
                 return True
 
+            for child_group in node.children:
+                can_achieve_goal = True
+                for conditions in child_group:
+                    if not all(backward_chaining(cond, knowledge_base, visited) for cond in conditions):
+                        can_achieve_goal = False
+                        break
+
+                if can_achieve_goal:
+                    node.achievable = True
+                    return True
+
     return False
 
 
