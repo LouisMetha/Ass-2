@@ -81,7 +81,8 @@ def backward_chaining(goal, knowledge_base, visited=None):
 def main():
 
     rules = []
-    print("This is an extended propositional backward chaining system.\nEnter facts to build knowledge base tree.\nType 'nil' to finish.\nExample for each fact: AvB=>E, D^E=>F etc.")
+    print("This is an extended propositional backward chaining system.\n")
+    print("Enter facts to build knowledge base tree.\nType 'nil' to finish.\nExample for each fact: AvB=>E, D^E=>F etc.")
     
     while True:
         rule = input("Enter facts: ")
